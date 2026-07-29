@@ -23,6 +23,7 @@ public sealed class CalculatorController : ControllerBase
     [HttpGet("subtract")]
     public ActionResult<int> Subtract([FromQuery] int firstNumber, [FromQuery] int secondNumber)
     {
+        //test
         return Ok(_calculatorService.Subtract(firstNumber, secondNumber));
     }
 }
