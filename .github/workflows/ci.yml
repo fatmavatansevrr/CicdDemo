@@ -31,4 +31,14 @@ jobs:
         run: dotnet build ./CicdDemo.sln --no-restore --configuration Release
 
       - name: Run tests
-        run: dotnet test ./CicdDemo.sln --no-build --configuration Release
+        run: dotnet test ./CicdDemo.sln
+          --no-build
+          --configuration Release
+          --logger "trx;LogFileName=test-results.trx"
+          --results-directory ./TestResults
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: ./TestResults
