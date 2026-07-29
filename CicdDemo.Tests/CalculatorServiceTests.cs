@@ -25,7 +25,7 @@ public sealed class CalculatorServiceTests
     [TestMethod]
     public void Subtract_WhenTwoNumbersAreProvided_ReturnsDifference()
     {
-        var result = _service.Subtr);
+        var result = _service.Subtract(10, 4);
 
         Assert.AreNotSame(6, result);
     }
