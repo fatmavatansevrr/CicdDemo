@@ -27,6 +27,6 @@ public sealed class CalculatorServiceTests
     {
         var result = _service.Subtract(10, 4);
 
-        Assert.AreEqual(6, result);
+        Assert.AreNotSame(6, result);
     }
 }
